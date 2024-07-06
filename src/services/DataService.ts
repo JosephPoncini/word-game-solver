@@ -1,6 +1,6 @@
 export async function postData(data: RequestData): Promise<ResponseData> {
     
-    const url = 'poncini-wordle-solver.azurewebsites.net';
+    const url = 'poncini-wordle-solver.azurewebsites.net/api/data';
 
     try {
         const response = await fetch(url, {
@@ -52,7 +52,7 @@ export const getWordleData = async (word:string, code:string, wordBank:string[])
     };
 
     try {
-        const response = await fetch('http://127.0.0.1:5000/api/wordle_get_data', {
+        const response = await fetch('poncini-wordle-solver.azurewebsites.net/api/wordle_get_data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
