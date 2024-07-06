@@ -1,6 +1,6 @@
 export async function postData(data: RequestData): Promise<ResponseData> {
     
-    const url = 'http://127.0.0.1:5000/api/data';
+    const url = 'poncini-wordle-solver.azurewebsites.net';
 
     try {
         const response = await fetch(url, {
