@@ -168,6 +168,24 @@ const WordleSolver = () => {
     initializeWordBank();
   },[])
 
+  const handleKeyPress = (event: KeyboardEvent) => {
+    const { key } = event;
+    if (key.length === 1 && /^[a-zA-Z]$/.test(key)) {
+      appendWord(key.toUpperCase());
+    } else if (key === 'Backspace') {
+      handleBackspace();
+    } else if (key === 'Enter') {
+      handleSubmit();
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyPress);
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [row, word1, word2, word3, word4, word5, word6, code, wordbank, board]);
+
   // useEffect(()=>{
   //   console.log(code);
   // },[code])
