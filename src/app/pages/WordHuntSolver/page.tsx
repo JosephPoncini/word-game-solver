@@ -127,7 +127,7 @@ const WordHuntSolver = () => {
   }, [boardData]);
 
   return (
-    <div className=' w-screen h-screen overflow-auto bg-[#688c61] flex flex-col items-center pt-16 px-5 lg:px-20 space-y-8'>
+    <div className=' w-screen relative overflow-auto bg-[#688c61] flex flex-col items-center pt-16 px-5 lg:px-20 space-y-8'>
 
       <div className={modalOn ? `sm:hidden bg-[#00000080] absolute inset-0 px-10 flex items-center ` : `hidden`}>
         <div className=' bg-white w-full h-[70vh] rounded-lg p-5 flex-col items-center overflow-auto'>
