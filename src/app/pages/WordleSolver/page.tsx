@@ -195,7 +195,7 @@ const WordleSolver = () => {
   // },[code])
 
   return (
-    <div className=' w-screen h-screen overflow-auto bg-teal-100 flex flex-col items-center pt-16 px-5 lg:px-20 pb-4 lg:pb-10'>
+    <div className=' w-screen overflow-auto bg-teal-100 flex flex-col items-center pt-16 px-5 lg:px-20 pb-4 pb-10'>
       
       <div className={loading ? `bg-[#00000080] absolute inset-0 px-10 flex flex-col justify-center ` : `hidden`}>
         <div className=' text-white font-Roboto text-center w-full'>Thinking...</div>
