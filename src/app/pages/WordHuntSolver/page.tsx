@@ -7,6 +7,8 @@ import React, { useEffect, useState } from 'react'
 
 const WordHuntSolver = () => {
 
+  const [loading, setLoading] = useState(false);
+
   const [modalOn, setModalOn] = useState<boolean>(false)
 
   const [warningMessage, setWarningMessage] = useState<string>('')
@@ -83,12 +85,14 @@ const WordHuntSolver = () => {
 
   const handleSubmit = async () => {
     if (!checkForBlanks()) {
+      setLoading(true)
       console.log("running")
       let data = await getWordHuntData(boardData)
+      setLoading(false)
       setWordBank(data);
       setModalOn(true)
       setWarningMessage('')
-    }else{
+    } else {
       setWarningMessage('The whole board must be filled :)')
     }
 
@@ -128,6 +132,10 @@ const WordHuntSolver = () => {
 
   return (
     <div className=' w-screen relative overflow-auto bg-[#688c61] flex flex-col items-center pt-16 px-5 lg:px-20 space-y-8 pb-10'>
+
+      <div className={loading ? `bg-[#00000080] absolute inset-0 px-10 flex items-center ` : `hidden`}>
+        <div className=' text-white font-Roboto text-center w-full'>Thinking...</div>
+      </div>
 
       <div className={modalOn ? `sm:hidden bg-[#00000080] absolute inset-0 px-10 flex items-center ` : `hidden`}>
         <div className=' bg-white w-full h-[70vh] rounded-lg p-5 flex-col items-center overflow-auto'>

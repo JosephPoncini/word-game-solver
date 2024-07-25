@@ -8,6 +8,8 @@ import React, { useEffect, useState } from 'react'
 
 const WordleSolver = () => {
 
+  const [loading, setLoading] = useState(false);
+
   const [wordbank, setWordbank] = useState<string[]>([]);
   const [bestWord, setBestWord] = useState<string>('');
 
@@ -145,7 +147,9 @@ const WordleSolver = () => {
     console.log(wordbank)
 
     if (result && !code.includes('w')) {
+      setLoading(true)
       const data = await getWordleData(word.toLocaleLowerCase(), code, wordbank)
+      setLoading(false)
       setBestWord(data.best_word);
       setWordbank(data.possible_words)
       setRow(row + 1);
@@ -192,6 +196,12 @@ const WordleSolver = () => {
 
   return (
     <div className=' w-screen h-screen overflow-auto bg-teal-100 flex flex-col items-center pt-16 px-5 lg:px-20 pb-4 lg:pb-10'>
+      
+      <div className={loading ? `bg-[#00000080] absolute inset-0 px-10 flex flex-col justify-center ` : `hidden`}>
+        <div className=' text-white font-Roboto text-center w-full'>Thinking...</div>
+        <div className=' text-white font-Roboto text-center w-full'>...This can take a while if your first guess was bad</div>
+      </div>
+      
       <div className=' flex flex-col items-center mb-5'>
         <div  className=' font-RobotoBold text-4xl cursor-pointer'>Wordle Solver</div>
         <div className=' font-Roboto text-md text-center'>(click the letters on the board to change their colors)</div>
