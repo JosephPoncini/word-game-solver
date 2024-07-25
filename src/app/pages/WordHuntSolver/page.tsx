@@ -2,6 +2,7 @@
 
 import KeyboardComponent from '@/components/Keyboard/KeyboardComponent'
 import WordHuntBoardComponent from '@/components/WordHuntBoard/WordHuntBoardComponent'
+import { getWordHuntData } from '@/services/DataService'
 import React, { useEffect, useState } from 'react'
 
 const WordHuntSolver = () => {
@@ -62,8 +63,10 @@ const WordHuntSolver = () => {
     setBoardData(board);
   }
 
-  const handleSubmit = () => {
-
+  const handleSubmit = async () => {
+    console.log("running")
+    let data = await getWordHuntData(boardData)
+    console.log(data)
   }
 
   useEffect(() => {
@@ -115,7 +118,7 @@ const WordHuntSolver = () => {
         </div>
       </div>
 
-      <KeyboardComponent onClick={addLetter} handleBackspace={handleBackspace} handleSubmit={() => { }} />
+      <KeyboardComponent onClick={addLetter} handleBackspace={handleBackspace} handleSubmit={handleSubmit} />
 
 
     </div>
