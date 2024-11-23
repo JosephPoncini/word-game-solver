@@ -131,7 +131,7 @@ const WordHuntSolver = () => {
   }, [boardData]);
 
   return (
-    <div className=' w-screen relative overflow-auto bg-[#688c61] flex flex-col items-center pt-16 px-5 lg:px-20 space-y-8 pb-10'>
+    <div className=' w-screen h-screen relative overflow-auto bg-[#688c61] flex flex-col items-center pt-16 px-5 lg:px-20 space-y-8 pb-10'>
 
       <div className={loading ? `bg-[#00000080] absolute inset-0 px-10 flex items-center ` : `hidden`}>
         <div className=' text-white font-Roboto text-center w-full'>Thinking...</div>
