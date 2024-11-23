@@ -1,9 +1,12 @@
+    const url = 'https://ponciniwordapp-gzbmddghcrdfe2gc.westus-01.azurewebsites.net/api/';
+    // const url = 'https://poncini-wordle-solver.azurewebsites.net/api/data';
+
+
 export async function postData(data: RequestData): Promise<ResponseData> {
     
-    const url = 'https://poncini-wordle-solver.azurewebsites.net/api/data';
 
     try {
-        const response = await fetch(url, {
+        const response = await fetch(url + "data", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -33,7 +36,7 @@ export const getWordleData = async (word:string, code:string, wordBank:string[])
     };
 
     try {
-        const response = await fetch('https://poncini-wordle-solver.azurewebsites.net/api/wordle_get_data', {
+        const response = await fetch(url + 'wordle_get_data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -72,7 +75,7 @@ export const getWordHuntData = async (board:string[][]) => {
     };
 
     try {
-        const response = await fetch('https://poncini-wordle-solver.azurewebsites.net/api/word_hunt_get_data', {
+        const response = await fetch(url + 'word_hunt_get_data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
