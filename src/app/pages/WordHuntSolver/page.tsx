@@ -135,6 +135,7 @@ const WordHuntSolver = () => {
 
       <div className={loading ? `bg-[#00000080] absolute inset-0 px-10 flex items-center ` : `hidden`}>
         <div className=' text-white font-Roboto text-center w-full'>Thinking...</div>
+        <div className=' text-white font-Roboto text-center w-full'>...if this takes too long you may need to refresh the page and try again...</div>
       </div>
 
       <div className={modalOn ? `sm:hidden bg-[#00000080] absolute inset-0 px-10 flex items-center ` : `hidden`}>

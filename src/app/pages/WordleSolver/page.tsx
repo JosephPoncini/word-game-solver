@@ -199,7 +199,9 @@ const WordleSolver = () => {
       
       <div className={loading ? `bg-[#00000080] absolute inset-0 px-10 flex flex-col justify-center ` : `hidden`}>
         <div className=' text-white font-Roboto text-center w-full'>Thinking...</div>
-        <div className=' text-white font-Roboto text-center w-full'>...This can take a while if your first guess was bad</div>
+        <div className=' text-white font-Roboto text-center w-full'>...This can take a while, possibly up to 4 minutes, if your first guess was bad...</div>
+        <br />
+        <div className=' text-white font-Roboto text-center w-full'>if the guess is decent and it is still taking a while, refresh the page and try again</div>
       </div>
       
       <div className=' flex flex-col items-center mb-5'>
