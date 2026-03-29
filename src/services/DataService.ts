@@ -1,7 +1,7 @@
     // const url = 'https://ponciniwordapp-gzbmddghcrdfe2gc.westus-01.azurewebsites.net/api/';
     // const url = 'https://poncini-wordle-solver.azurewebsites.net/api/data';
     // const url = 'http://127.0.0.1:5000/api/';
-    const url = 'https://wordhelperwebapp-g6eucnd9h8gcgvg5.westus3-01.azurewebsites.net/api/';
+    const url = 'https://wordhelper-b3g5g9dgdeefg5hj.westus3-01.azurewebsites.net/api/';
 
 export async function postData(data: RequestData): Promise<ResponseData> {
     
